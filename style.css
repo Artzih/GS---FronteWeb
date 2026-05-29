@@ -1,39 +1,36 @@
-
-
-
-body{
-    background:black;
-    color:white;
-    overflow-x:hidden;
+body {
+    background: black;
+    color: white;
+    overflow-x: hidden;
 }
 
-.hero-text{
+.hero-text {
     text-align: center;
     font-size: 30px;
 }
 
-
-header{
-    border-bottom:1px solid white;
-    padding:20px 40px;
+/* CONTAINER PRINCIPAL */
+.header-container {
+    display: flex;
+    align-items: center;       /* Alinha verticalmente os dois no meio */
+    justify-content: center;   /* Centraliza o conteúdo horizontalmente */
+    position: relative;        /* Necessário para o posicionamento da logo */
+    border-bottom: 1px solid white;
+    padding: 20px 40px;
 }
 
-.header-content{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
+/* LOGO FIAP (Fixada na esquerda) */
+.logofiap {
+    width: 120px;
+    height: auto;
+    position: absolute;        /* Tira a logo do fluxo para não empurrar o título */
+    left: 40px;                /* Distância da borda esquerda */
 }
 
-.logofiap{
-    width:120px;
-    height:auto;
-    
-}
-
-.logo{
-    font-size:28px;
-    letter-spacing:4px;
+/* TÍTULO ORBCLEAR (Centralizado) */
+.logo {
+    font-size: 28px;
+    letter-spacing: 4px;
+    margin: 0;                 /* Remove as margens padrão do h1 */
     text-align: center;
 }
-
