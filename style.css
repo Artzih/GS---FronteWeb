@@ -84,3 +84,43 @@ body {
     0%{transform: rotateZ(360deg);}
     100%{transform: rotateZ(0deg);}
 }
+
+.paragrafo {
+    display: flex;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    flex-direction: row;
+    text-align: center;
+    max-width: 1100px;
+    margin: 40 auto;
+    padding: 0 20px;
+    gap: 50px;
+    
+}
+.paragrafo p {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+    margin: 0;
+}
+
+.container-paragrafos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: -20px;            
+    max-width: 1000px;    
+    margin: 0 auto;       
+}
+
+.titulo {
+    font-family: "Changa One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 5px; 
+    margin-top: 20px;
+}
