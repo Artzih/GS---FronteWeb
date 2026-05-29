@@ -12,9 +12,9 @@ body {
 /* CONTAINER PRINCIPAL */
 .header-container {
     display: flex;
-    align-items: center;       /* Alinha verticalmente os dois no meio */
-    justify-content: center;   /* Centraliza o conteúdo horizontalmente */
-    position: relative;        /* Necessário para o posicionamento da logo */
+    align-items: center;       
+    justify-content: center;   
+    position: relative;        
     border-bottom: 1px solid white;
     padding: 20px 40px;
 }
@@ -23,14 +23,14 @@ body {
 .logofiap {
     width: 120px;
     height: auto;
-    position: absolute;        /* Tira a logo do fluxo para não empurrar o título */
-    left: 40px;                /* Distância da borda esquerda */
+    position: absolute;        
+    left: 40px;                
 }
 
 /* TÍTULO ORBCLEAR (Centralizado) */
 .logo {
     font-size: 28px;
     letter-spacing: 4px;
-    margin: 0;                 /* Remove as margens padrão do h1 */
+    margin: 0;                
     text-align: center;
 }
