@@ -124,3 +124,22 @@ body {
     margin-bottom: 5px; 
     margin-top: 20px;
 }
+
+nav {
+    background-color: #230431;
+    width: 150px;
+    height: 30px;
+    border-radius: 500px;
+    margin-top: 40.200px;
+    text-align: center;
+    justify-content: center;
+    margin: 40px auto 0 auto;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: aliceblue ;   
+    text-decoration: none;        
+}
