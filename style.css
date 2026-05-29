@@ -1,0 +1,39 @@
+
+
+
+body{
+    background:black;
+    color:white;
+    overflow-x:hidden;
+}
+
+.hero-text{
+    text-align: center;
+    font-size: 30px;
+}
+
+
+header{
+    border-bottom:1px solid white;
+    padding:20px 40px;
+}
+
+.header-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+}
+
+.logofiap{
+    width:120px;
+    height:auto;
+    
+}
+
+.logo{
+    font-size:28px;
+    letter-spacing:4px;
+    text-align: center;
+}
+
