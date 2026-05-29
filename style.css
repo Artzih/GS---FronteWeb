@@ -1,5 +1,6 @@
 body {
-    background: black;
+    background-image: linear-gradient(20deg, black, #200149, #320149, black);
+    height: 100vh;
     color: white;
     overflow-x: hidden;
     margin: 0;
