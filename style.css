@@ -88,14 +88,14 @@ body {
     position: absolute;
     transform: translate(-50%, -50%) translateZ(0);
     transform-style: preserve-3d;
-    animation: rotateZ 360s infinite linear;
+    animation: rotacao 360s infinite linear;
     width: 300px;
 }
 @keyframes rotate {
     0%{transform: rotateY(0deg);}
     100%{transform: rotateY(360deg);}
 }
-@keyframes rotateZ {
+@keyframes rotacao {
     0%{transform: rotateZ(360deg);}
     100%{transform: rotateZ(0deg);}
 }
