@@ -7,6 +7,7 @@
     box-sizing: border-box;
     transition: all 0.3s ease;
     color: aliceblue;
+    scroll-behavior: smooth;
 }
 
 /* ESTILO PARA A SELEÇÃO DE TEXTO */
@@ -101,6 +102,31 @@ body {
 }
 /* FIM DO CARROSSEL (órbita) */
 
+
+.secao {
+    height: 80vh;
+    padding-top: 40px;
+}
+
+.titulo {
+    font-family: "Changa One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 5px; 
+    margin-top: 20px;
+    font-size: 70px;
+}
+
+.container-paragrafos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: -20px;            
+    max-width: 1000px;    
+    margin: 0 auto;       
+}
+
 .paragrafo {
     display: flex;
     font-family: "Quicksand", sans-serif;
@@ -115,30 +141,13 @@ body {
     gap: 50px;
     
 }
+
 .paragrafo p {
     flex: 1;
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
     margin: 0;
-}
-
-.container-paragrafos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: -20px;            
-    max-width: 1000px;    
-    margin: 0 auto;       
-}
-
-.titulo {
-    font-family: "Changa One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
-    margin-bottom: 5px; 
-    margin-top: 20px;
 }
 
 nav {
