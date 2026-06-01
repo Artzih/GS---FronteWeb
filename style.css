@@ -179,3 +179,20 @@ nav {
     font-size: larger;
     padding: 12px;
 }
+
+.nav-link:visited {
+    color: #7c5fff;
+}
+
+.nav-link:active {
+    color: #471eff;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.rodape {
+    background-color: #17002c6e;
+    height: 30vh;
+    border-top: 1px solid black;
+    display: flex;
+}
