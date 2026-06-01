@@ -194,9 +194,94 @@ nav {
     font-size: 16px;
 }
 
-.rodape {
+.rodape{
     background-color: #17002c6e;
-    height: 30vh;
-    border-top: 1px solid black;
-    display: flex;
+    min-height: 120px;
+    border-top: 1px solid #6a3cff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+
+    padding:25px 40px;
+}
+
+/* BLOCO ESQUERDO E DIREITO */
+.footer-section{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+/* LINHA DIVISÓRIA */
+.footer-divider{
+    width:1px;
+    height:70px;
+    background:rgba(255,255,255,.2);
+}
+
+/* ÍCONES */
+.icon-box{
+    width:60px;
+    height:60px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:1px solid #7b4dff;
+    border-radius:18px;
+
+    box-shadow:0 0 15px rgba(123,77,255,.4);
+}
+
+.icon-box img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+/* TEXTOS */
+.footer-section h3{
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.footer-section p{
+    color:#cfcfcf;
+}
+
+.footer-section h4{
+    color:#9d6dff;
+    margin-bottom:8px;
+}
+
+/* EQUIPE */
+.team-members{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.team-members span{
+    color:#e7e7e7;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+
+    .rodape{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-divider{
+        width:80%;
+        height:1px;
+    }
+
+    .team-members{
+        justify-content:center;
+    }
 }
