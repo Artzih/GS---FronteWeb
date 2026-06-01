@@ -43,8 +43,8 @@ body {
 .logofiap {
     width: 120px;
     height: auto;
-    position: absolute;        
-    left: 40px;                
+    position: absolute;
+    left: 40px;
 }
 
 /* TÍTULO ORBCLEAR (Centralizado) */
@@ -194,94 +194,99 @@ nav {
     font-size: 16px;
 }
 
-.rodape{
+/* RODAPÉ */
+.rodape {
     background-color: #17002c6e;
-    min-height: 120px;
-    border-top: 1px solid #6a3cff;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:40px;
-
-    padding:25px 40px;
+    height: 30vh;
+    border-top: 1px solid black;
+    display: flex;
+    padding: 2.5rem 2rem 1.5rem;
+    color: #c9c9d8;
 }
 
-/* BLOCO ESQUERDO E DIREITO */
-.footer-section{
-    display:flex;
-    align-items:center;
-    gap:20px;
+.rodape-container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* LINHA DIVISÓRIA */
-.footer-divider{
-    width:1px;
-    height:70px;
-    background:rgba(255,255,255,.2);
+.rodape-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
-/* ÍCONES */
-.icon-box{
-    width:60px;
-    height:60px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    border:1px solid #7b4dff;
-    border-radius:18px;
-
-    box-shadow:0 0 15px rgba(123,77,255,.4);
+.rodape-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
 }
 
-.icon-box img{
-    width:90px;
-    height:90px;
-    object-fit:contain;
+.rodape-logo-img {
+    height: 24px;
 }
 
-/* TEXTOS */
-.footer-section h3{
-    font-size:20px;
-    margin-bottom:5px;
+.rodape-titulo {
+    font-size: 17px;
+    font-weight: 500;
+    color: #f0f0ff;
 }
 
-.footer-section p{
-    color:#cfcfcf;
+.rodape-descricao {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #8888a8;
+    margin: 0;
 }
 
-.footer-section h4{
-    color:#9d6dff;
-    margin-bottom:8px;
+.rodape-coluna-titulo {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7F77DD;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 0.75rem;
 }
 
-/* EQUIPE */
-.team-members{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+.rodape-listas {
+    display: flex;
+    gap: 40px;
 }
 
-.team-members span{
-    color:#e7e7e7;
+.rodape-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* RESPONSIVO */
-@media(max-width:900px){
+.rodape-link {
+    font-size: 13px;
+    color: #9898b8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
 
-    .rodape{
-        flex-direction:column;
-        text-align:center;
-    }
+.rodape-link:hover {
+    color: #f0f0ff;
+}
 
-    .footer-divider{
-        width:80%;
-        height:1px;
-    }
+.rodape-base {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-    .team-members{
-        justify-content:center;
-    }
+.rodape-copyright,
+.rodape-credito {
+    font-size: 12px;
+    color: #55556a;
+    margin: 0;
 }
