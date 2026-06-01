@@ -1,45 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Quicksand:wght@400;700&display=swap');
 
-/* AJUSTES INICIAIS PARA PADRONIZAR E FACILITAR A MANIPULAÇÃO DOS ELEMENTOS DA PÁGINA */
+/* VARIÁVEIS CSS (CSS Custom Properties) */
+:root {
+    --cor-primaria: #9040a8;
+    --cor-secundaria: #7c5fff;
+    --cor-acento: #471eff;
+    --cor-fundo: #17002c;
+    --cor-texto: aliceblue;
+    --cor-texto-suave: #c9c9d8;
+    --cor-texto-muted: #8888a8;
+    --cor-nav-bg: #230431;
+    --cor-rodape-bg: #17002c6e;
+    --cor-borda: rgba(255, 255, 255, 0.08);
+
+    --fonte-titulo: "Changa One", sans-serif;
+    --fonte-corpo: "Quicksand", sans-serif;
+
+    --tamanho-titulo: 70px;
+    --tamanho-paragrafo: 16px;
+    --tamanho-nav: 14px;
+
+    --raio-borda: 500px;
+    --transicao: all 0.3s ease;
+
+    --espaco-secao: 40px;
+    --espaco-rodape: 2.5rem 2rem 1.5rem;
+}
+
+/* RESET CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease;
-    color: aliceblue;
+    transition: var(--transicao);
+    color: var(--cor-texto);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* SCROLL SUAVE */
+html {
     scroll-behavior: smooth;
 }
 
-/* ESTILO PARA A SELEÇÃO DE TEXTO */
+/* SELEÇÃO DE TEXTO */
 *::selection {
-    background-color: #9040a8;
+    background-color: var(--cor-primaria);
     color: black;
 }
 
-/* ESTILO GRADIENTE PARA O CORPO DA PÁGINA */
+/* BODY — GRADIENTE DE FUNDO */
 body {
     background-image: linear-gradient(20deg, black, #200149, #320149, black);
-    height: 100vh;
-    background-attachment:fixed;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
-.hero-text {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 40.200px;
-}
-
-/* CONTAINER PRINCIPAL */
+/* HEADER */
 .header-container {
     display: flex;
-    align-items: center;       
-    justify-content: center;   
-    position: relative;        
-    border-bottom: 1px solid white;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid var(--cor-borda);
     padding: 20px 40px;
 }
 
-/* LOGO FIAP (Fixada na esquerda) */
 .logofiap {
     width: 120px;
     height: auto;
@@ -47,15 +79,67 @@ body {
     left: 40px;
 }
 
-/* TÍTULO ORBCLEAR (Centralizado) */
 .logo {
     font-size: 28px;
     letter-spacing: 4px;
-    margin: 0;                
+    margin: 0;
     text-align: center;
 }
 
-/* INÍCIO DO CARROSSEL (órbita) */
+/* NAVEGAÇÃO */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 40px;
+}
+
+.barra-navegacao {
+    background-color: var(--cor-nav-bg);
+    min-width: 140px;
+    max-width: 160px;
+    min-height: 35px;
+    border-radius: var(--raio-borda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link {
+    font-family: var(--fonte-corpo);
+    font-size: var(--tamanho-nav);
+    font-weight: 700;
+    padding: 8px 16px;
+    color: var(--cor-texto);
+}
+
+.nav-link:hover {
+    color: var(--cor-secundaria);
+    font-size: calc(var(--tamanho-nav) + 4px);
+}
+
+.nav-link:visited {
+    color: var(--cor-secundaria);
+}
+
+.nav-link:active {
+    color: var(--cor-acento);
+}
+
+/* HERO TEXT */
+.hero-text {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+    line-height: 1.4;
+}
+
+.hero-text span {
+    color: var(--cor-primaria);
+}
+
+/* CARROSSEL (ÓRBITA) */
 .scene {
     margin-bottom: 120px;
     margin-top: 160px;
@@ -70,6 +154,7 @@ body {
     align-items: center;
     transform-style: preserve-3d;
 }
+
 .carrossel {
     position: absolute;
     width: 100%;
@@ -80,6 +165,7 @@ body {
     transform-origin: center center;
     animation: rotate 30s infinite linear;
 }
+
 .carrossel img {
     position: absolute;
     left: 50%;
@@ -88,6 +174,7 @@ body {
     aspect-ratio: 4 / 5;
     transform: rotateY(var(--i)) translateZ(400px) translate(-50%, -50%);
 }
+
 .planeta {
     position: absolute;
     transform: translate(-50%, -50%) translateZ(0);
@@ -95,113 +182,63 @@ body {
     animation: rotacao 360s infinite linear;
     width: 350px;
 }
+
 @keyframes rotate {
     0%{transform: rotateY(0deg);}
     100%{transform: rotateY(360deg);}
 }
+
 @keyframes rotacao {
     0%{transform: rotateZ(360deg);}
     100%{transform: rotateZ(0deg);}
 }
-/* FIM DO CARROSSEL (órbita) */
 
-
+/* SEÇÕES DE CONTEÚDO */
 .secao {
-    height: 60vh;
-    padding-top: 40px;
+    min-height: 60vh;
+    padding: var(--espaco-secao) 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .titulo {
-    font-family: "Changa One", sans-serif;
+    font-family: var(--fonte-titulo);
     font-weight: 400;
     font-style: normal;
     text-align: center;
-    margin-bottom: 5px; 
+    margin-bottom: 10px;
     margin-top: 20px;
-    font-size: 70px;
+    font-size: var(--tamanho-titulo);
 }
+
 
 .container-paragrafos {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: -20px;            
-    max-width: 1000px;    
-    margin: 0 auto;       
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .paragrafo {
-    display: flex;
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
+    font-family: var(--fonte-corpo);
     font-weight: 400;
-    font-style: normal;
-    flex-direction: row;
-    text-align: center;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 50px;
-    
-}
-
-.paragrafo p {
-    flex: 1;
-    font-size: 16px;
+    font-size: var(--tamanho-paragrafo);
     line-height: 1.6;
-    text-align: left;
-    margin: 0;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.barra-navegacao {
-    background-color: #230431;
-    min-width: 140px;
-    max-width: 150px;
-    min-height: 35px;
-    max-height: 60px;
-    border-radius: 500px;
-    margin-top: 40.200px;
     text-align: center;
-    justify-content: center;
-    margin: 40px auto 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.nav-link {
-    text-decoration: none;
-}
-
-.nav-link:hover {
-    color: #7c5fff;
-    font-weight: bold;
-    font-size: larger;
-    padding: 12px;
-}
-
-.nav-link:visited {
-    color: #7c5fff;
-}
-
-.nav-link:active {
-    color: #471eff;
-    font-weight: 400;
-    font-size: 16px;
+    flex: 1;
+    max-width: 420px;
+    margin-top: 20px;
 }
 
 /* RODAPÉ */
 .rodape {
-    background-color: #17002c6e;
-    height: 30vh;
-    border-top: 1px solid black;
-    display: flex;
-    padding: 2.5rem 2rem 1.5rem;
-    color: #c9c9d8;
+    background-color: var(--cor-rodape-bg);
+    border-top: 1px solid var(--cor-borda);
+    padding: var(--espaco-rodape);
 }
 
 .rodape-container {
@@ -210,10 +247,21 @@ nav {
 }
 
 .rodape-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.rodape-sobre {
+    flex: 2;
+    min-width: 200px;
+}
+
+.rodape-coluna {
+    flex: 1;
+    min-width: 150px;
 }
 
 .rodape-logo {
@@ -236,14 +284,14 @@ nav {
 .rodape-descricao {
     font-size: 13px;
     line-height: 1.7;
-    color: #8888a8;
+    color: var(--cor-texto-muted);
     margin: 0;
 }
 
 .rodape-coluna-titulo {
     font-size: 12px;
-    font-weight: 500;
-    color: #7F77DD;
+    font-weight: 700;
+    color: var(--cor-secundaria);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin: 0 0 0.75rem;
@@ -255,9 +303,6 @@ nav {
 }
 
 .rodape-lista {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -266,8 +311,6 @@ nav {
 .rodape-link {
     font-size: 13px;
     color: #9898b8;
-    text-decoration: none;
-    transition: color 0.2s;
 }
 
 .rodape-link:hover {
@@ -275,7 +318,7 @@ nav {
 }
 
 .rodape-base {
-    border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-top: 0.5px solid var(--cor-borda);
     padding-top: 1.25rem;
     display: flex;
     align-items: center;
