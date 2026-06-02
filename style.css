@@ -60,6 +60,7 @@ input[type="reset"] {
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 /* SCROLL SUAVE */
@@ -264,7 +265,7 @@ nav {
     margin: 0 auto;
 }
 
-.rodape-grid {
+.rodape-flex {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
