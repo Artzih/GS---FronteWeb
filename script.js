@@ -7,7 +7,7 @@ const imagens = [
 let index = 0;
 
 function mostrarSlide (){
-    document.getElementById('imagem').src = imagens[index];
+    document.getElementsByClassName('imagem-ss')[0].src = imagens[index];
 };
 function voltarSlide (){
     index--

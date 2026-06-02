@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-  
+
     <!-- CABEÇALHO -->
     <header class="header-container">
       <div>
@@ -15,7 +15,7 @@
         <h1 class="logo">OrbClear · Global Solution</h1>
       </div>
     </header>
-  
+
     <!-- NAVEGAÇÃO -->
     <nav>
       <div class="barra-navegacao">
@@ -37,14 +37,14 @@
         <a href="#dia-a-dia" class="nav-link">Dia a Dia</a>
       </div>
     </nav>
-  
+
     <!-- HERO -->
     <div class="hero-text">
       <h1>
         A TECNOLOGIA<br>ESPACIAL JÁ COMEÇOU<br>E VOCÊ FAZ PARTE DELA.
       </h1>
     </div>
-  
+
     <!-- CARROSSEL (órbita) -->
     <div class="scene">
       <div class="carrossel">
@@ -55,7 +55,7 @@
       </div>
       <img class="planeta" src="./imgs/terra.webp" alt="Planeta Terra vista do espaço">
     </div>
-  
+
     <!-- SEÇÃO 1 — PROBLEMA -->
     <section class="secao" id="problema">
       <h2 class="titulo">Síndrome de Kessler</h2>
@@ -67,20 +67,18 @@
           Colisões entre detritos geram mais colisões, criando uma barreira orbital que pode durar séculos.
         </p>
       </div>
+
+      <!-- SLIDESHOW -->
       <div class="slideshow">
-      
-          <img id="imagem" src="./imgs/kesler1.png" alt="slideShow"></img>
-      
+          <img class="imagem-ss" src="./imgs/kesler1.png" alt="slideShow da síndrome de Kessler"></img>
           <br>
-      
-          <button onclick="voltarSlide()">Voltar</button>
-          <button onclick="proximoSlide()">Próximo</button>
-      
+          <div class="container-botoes">
+            <button class="botao" onclick="voltarSlide()">Voltar</button>
+            <button class="botao" onclick="proximoSlide()">Próximo</button>
+          </div>
       </div>
     </section>
-  
-  
-  
+
     <!-- SEÇÃO 2 — TECNOLOGIAS -->
     <section class="secao" id="tecnologias">
       <h2 class="titulo">Tecnologias</h2>
@@ -93,7 +91,7 @@
         </p>
       </div>
     </section>
-  
+
     <!-- SEÇÃO 3 — OBJETIVOS -->
     <section class="secao" id="objetivos">
       <h2 class="titulo">Objetivos</h2>
@@ -106,7 +104,7 @@
         </p>
       </div>
     </section>
-  
+
     <!-- SEÇÃO 4 — PÚBLICO-ALVO -->
     <section class="secao" id="publico-alvo">
       <h2 class="titulo">Público-Alvo</h2>
@@ -119,7 +117,7 @@
         </p>
       </div>
     </section>
-  
+
     <!-- SEÇÃO 5 — BENEFÍCIOS -->
     <section class="secao" id="beneficios">
       <h2 class="titulo">Benefícios</h2>
@@ -132,7 +130,7 @@
         </p>
       </div>
     </section>
-  
+
     <!-- SEÇÃO 6 — DIA A DIA -->
     <section class="secao" id="dia-a-dia">
       <h2 class="titulo">Solução no Dia a Dia</h2>
@@ -145,7 +143,7 @@
         </p>
       </div>
     </section>
-  
+
     <!-- RODAPÉ -->
     <footer class="rodape">
       <div class="rodape-container">
@@ -184,7 +182,7 @@
         </div>
       </div>
     </footer>
-  
+
   </body>
   <script src="script.js"></script>
 </html>
