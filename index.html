@@ -10,9 +10,13 @@
 
     <!-- CABEÇALHO -->
     <header class="header-container">
-      <div>
         <img src="./imgs/FIAP.webp" alt="Logo da FIAP" class="logofiap">
         <h1 class="logo">OrbClear · Global Solution</h1>
+      <div class="tema-selector">
+        <span class="tema-label">Tema:</span>
+        <button class="tema-btn" onclick="trocarTema('roxo')" style="background:#9040a8">Roxo</button>
+        <button class="tema-btn" onclick="trocarTema('azul')" style="background:#1a6fff">Azul</button>
+        <button class="tema-btn" onclick="trocarTema('verde')" style="background:#00a86b">Verde</button>
       </div>
     </header>
 
@@ -143,6 +147,50 @@
         </p>
       </div>
     </section>
+
+    <!-- SEÇÃO 7 — FORMULÁRIO DE CONTATO -->
+<section class="secao" id="contato">
+  <h2 class="titulo">Contato</h2>
+  <p class="paragrafo">Tem interesse no projeto ou alguma sugestão? Entre em contato!</p>
+  <div id="form-area">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" placeholder="Seu nome">
+    <label for="email">E-mail</label>
+    <input type="email" id="email" placeholder="seu@email.com">
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" placeholder="Escreva aqui..."></textarea>
+    <button onclick="enviarFormulario()">Enviar</button>
+    <p id="form-sucesso"></p>
+  </div>
+</section>
+
+<!-- SEÇÃO 8 — QUIZ -->
+<section class="secao" id="quiz">
+  <h2 class="titulo">Quiz</h2>
+  <div class="container-paragrafos">
+    <p class="paragrafo">Teste seus conhecimentos sobre lixo espacial e a Síndrome de Kessler!</p>
+  </div>
+  <div class="quiz-wrapper">
+    <div id="quiz-container">
+      <p id="quiz-progresso"></p>
+      <p id="quiz-pergunta"></p>
+      <div id="quiz-opcoes"></div>
+      <button class="botao" id="btn-proxima" onclick="proximaPergunta()" style="display:none">Próxima</button>
+    </div>
+    <div id="quiz-resultado" style="display:none">
+      <p id="quiz-resultado-emoji"></p>
+      <p id="quiz-resultado-texto"></p>
+      <button class="botao" onclick="reiniciarQuiz()">Jogar Novamente</button>
+    </div>
+  </div>
+</section>
+
+<!-- Botões de tema, dentro do header -->
+<div class="tema-selector">
+  <button class="tema-btn" onclick="trocarTema('roxo')" style="background:#9040a8"></button>
+  <button class="tema-btn" onclick="trocarTema('azul')" style="background:#1a6fff"></button>
+  <button class="tema-btn" onclick="trocarTema('verde')" style="background:#00a86b"></button>
+</div>
 
     <!-- RODAPÉ -->
     <footer class="rodape">
