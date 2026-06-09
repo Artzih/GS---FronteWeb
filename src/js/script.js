@@ -24,32 +24,6 @@ function proximoSlide (){
     mostrarSlide();
 }
 
-// FORMULÁRIO
-function enviarFormulario() {
-    const nome     = document.getElementById('nome').value.trim();
-    const email    = document.getElementById('email').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
-
-    document.getElementById('erro-nome').textContent     = '';
-    document.getElementById('erro-email').textContent    = '';
-    document.getElementById('erro-mensagem').textContent = '';
-    document.getElementById('form-sucesso').textContent  = '';
-
-    let valido = true;
-
-    if (!nome)     { document.getElementById('erro-nome').textContent     = 'Insira seu nome.';    valido = false; }
-    if (!email)    { document.getElementById('erro-email').textContent    = 'Insira seu e-mail.';  valido = false; }
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-                   { document.getElementById('erro-email').textContent    = 'E-mail inválido.';    valido = false; }
-    if (!mensagem) { document.getElementById('erro-mensagem').textContent = 'Escreva uma mensagem.'; valido = false; }
-
-    if (valido) {
-        document.getElementById('form-sucesso').textContent = '✅ Mensagem enviada com sucesso!';
-        document.getElementById('nome').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('mensagem').value = '';
-    }
-}
 
 // TEMA
 const temas = {
@@ -117,7 +91,28 @@ for (let i = 0; i < perguntas.length; i++) {
         texto += `${j + 1} - ${perguntas[i].opcoes[j]}\n`;
     }
 
-    let resposta = Number(prompt(texto));
+    // Validação da entrada do usuário
+    let resposta;
+    let valida = false;
+
+    while (!valida) {
+        let entrada = prompt(texto);
+
+        // Usuário cancelou ou deixou em branco
+        if (entrada === null || entrada.trim() === "") {
+            alert("⚠️ Por favor, responda antes de continuar.");
+            continue;
+        }
+
+        resposta = Number(entrada);
+
+        // Verifica se é um número dentro das opções disponíveis
+        if (!isNaN(resposta) && resposta >= 1 && resposta <= perguntas[i].opcoes.length) {
+            valida = true;
+        } else {
+            alert(`⚠️ Digite um número entre 1 e ${perguntas[i].opcoes.length}.`);
+        }
+    }
 
     if (resposta - 1 === perguntas[i].correta) {
         console.log("✅ Resposta correta!");
@@ -133,12 +128,17 @@ for (let i = 0; i < perguntas.length; i++) {
 
 console.log("\n===== RESULTADO FINAL =====");
 
+let mensagemFinal;
+
 if (pontuacao <= 4) {
-    console.log(`⚠️ ${pontuacao}/10 — Você ainda não conhece bem o problema.`);
+    mensagemFinal = `⚠️ ${pontuacao}/10 — Você ainda não conhece bem o problema.`;
 }
 else if (pontuacao <= 8) {
-    console.log(`🛰️ ${pontuacao}/10 — Você entende os riscos principais.`);
+    mensagemFinal = `🛰️ ${pontuacao}/10 — Você entende os riscos principais.`;
 }
 else {
-    console.log(`🚨 ${pontuacao}/10 — Excelente!`);
+    mensagemFinal = `🚀 ${pontuacao}/10 — Excelente!`;
 }
+
+console.log(mensagemFinal);
+alert(`${mensagemFinal}\n\nAbra o console do navegador (F12 → Console) para ver o detalhamento das suas respostas!`);
