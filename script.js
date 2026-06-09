@@ -106,66 +106,39 @@ const perguntas = [
       correta: 1 },
 ];
 
-let quizIndex = 0, pontuacao = 0, respondeu = false;
+let pontuacao = 0;
 
-function carregarPergunta() {
-    respondeu = false;
-    const p = perguntas[quizIndex];
-    document.getElementById('quiz-progresso').textContent = `Pergunta ${quizIndex + 1} de ${perguntas.length}`;
-    document.getElementById('quiz-pergunta').textContent  = p.pergunta;
-    document.getElementById('btn-proxima').style.display  = 'none';
+for (let i = 0; i < perguntas.length; i++) {
 
-    const opcoes = document.getElementById('quiz-opcoes');
-    opcoes.innerHTML = '';
-    p.opcoes.forEach((texto, i) => {
-        const btn = document.createElement('button');
-        btn.className   = 'quiz-opcao';
-        btn.textContent = texto;
-        btn.onclick     = () => responder(i, btn);
-        opcoes.appendChild(btn);
-    });
+    let texto = `Pergunta ${i + 1} de ${perguntas.length}\n\n`;
+    texto += perguntas[i].pergunta + "\n\n";
+
+    for (let j = 0; j < perguntas[i].opcoes.length; j++) {
+        texto += `${j + 1} - ${perguntas[i].opcoes[j]}\n`;
+    }
+
+    let resposta = Number(prompt(texto));
+
+    if (resposta - 1 === perguntas[i].correta) {
+        console.log("✅ Resposta correta!");
+        pontuacao++;
+    } else {
+        console.log("❌ Resposta incorreta!");
+        console.log(
+            "Resposta correta: " +
+            perguntas[i].opcoes[perguntas[i].correta]
+        );
+    }
 }
 
-function responder(indice, btnClicado) {
-    if (respondeu) return;
-    respondeu = true;
+console.log("\n===== RESULTADO FINAL =====");
 
-    const correta = perguntas[quizIndex].correta;
-    document.querySelectorAll('.quiz-opcao').forEach(b => b.disabled = true);
-
-    if (indice === correta) { btnClicado.classList.add('correta'); pontuacao++; }
-    else { btnClicado.classList.add('errada'); document.querySelectorAll('.quiz-opcao')[correta].classList.add('correta'); }
-
-    const btn = document.getElementById('btn-proxima');
-    btn.style.display = 'inline-block';
-    btn.textContent   = quizIndex < perguntas.length - 1 ? 'Próxima' : 'Ver Resultado';
+if (pontuacao <= 4) {
+    console.log(`⚠️ ${pontuacao}/10 — Você ainda não conhece bem o problema.`);
 }
-
-function proximaPergunta() {
-    quizIndex++;
-    quizIndex < perguntas.length ? carregarPergunta() : mostrarResultado();
+else if (pontuacao <= 8) {
+    console.log(`🛰️ ${pontuacao}/10 — Você entende os riscos principais.`);
 }
-
-function mostrarResultado() {
-    document.getElementById('quiz-container').style.display  = 'none';
-    document.getElementById('quiz-resultado').style.display  = 'block';
-
-    const resultados = [
-        { max: 4, emoji: '⚠️', msg: `${pontuacao}/10 — Você ainda não conhece bem o problema.` },
-        { max: 8, emoji: '🛰️', msg: `${pontuacao}/10 — Você entende os riscos principais.` },
-        { max: 10, emoji: '🚨', msg: `${pontuacao}/10 — Excelente!` },
-    ];
-
-    const r = resultados.find(r => pontuacao <= r.max);
-    document.getElementById('quiz-resultado-emoji').textContent = r.emoji;
-    document.getElementById('quiz-resultado-texto').textContent = r.msg;
+else {
+    console.log(`🚨 ${pontuacao}/10 — Excelente!`);
 }
-
-function reiniciarQuiz() {
-    quizIndex = 0; pontuacao = 0;
-    document.getElementById('quiz-container').style.display = 'block';
-    document.getElementById('quiz-resultado').style.display = 'none';
-    carregarPergunta();
-}
-
-document.addEventListener('DOMContentLoaded', carregarPergunta);
