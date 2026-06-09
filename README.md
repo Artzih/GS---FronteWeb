@@ -1,8 +1,6 @@
 # GS---FronteWeb
 # 🚀 OrbClear
 
-http://127.0.0.1:5500/index.html
-
 ##  Sobre o Projeto
 
 O OrbClear é uma solução desenvolvida para a Global Solution FIAP com o objetivo de conscientizar sobre a Síndrome de Kessler e apresentar uma proposta tecnológica para a remoção e reciclagem de detritos espaciais.

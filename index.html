@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>OrbClear</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/css/style.css">
   </head>
   <body>
 
     <!-- CABEÇALHO -->
     <header class="header-container">
-        <img src="./imgs/FIAP.webp" alt="Logo da FIAP" class="logofiap">
+        <img src="src/assets/imgs/FIAP.webp" alt="Logo da FIAP" class="logofiap">
         <h1 class="logo">OrbClear · Global Solution</h1>
       <div class="tema-selector">
         <span class="tema-label">Tema:</span>
@@ -52,12 +52,12 @@
     <!-- CARROSSEL (órbita) -->
     <div class="scene">
       <div class="carrossel">
-        <img src="./imgs/sat-1.png" style="--i:000deg" alt="Satélite 1 orbitando a Terra">
-        <img src="./imgs/sat-2.webp" style="--i:090deg" alt="Satélite 2 orbitando a Terra">
-        <img src="./imgs/sat-3.webp" style="--i:180deg" alt="Satélite 3 orbitando a Terra">
-        <img src="./imgs/sat-4.png" style="--i:270deg" alt="Satélite 4 orbitando a Terra">
+        <img src="src/assets/imgs/sat-1.png" style="--i:000deg" alt="Satélite 1 orbitando a Terra">
+        <img src="src/assets/imgs/sat-2.webp" style="--i:090deg" alt="Satélite 2 orbitando a Terra">
+        <img src="src/assets/imgs/sat-3.webp" style="--i:180deg" alt="Satélite 3 orbitando a Terra">
+        <img src="src/assets/imgs/sat-4.png" style="--i:270deg" alt="Satélite 4 orbitando a Terra">
       </div>
-      <img class="planeta" src="./imgs/terra.webp" alt="Planeta Terra vista do espaço">
+      <img class="planeta" src="src/assets/imgs/terra.webp" alt="Planeta Terra vista do espaço">
     </div>
 
     <!-- SEÇÃO 1 — PROBLEMA -->
@@ -74,7 +74,7 @@
 
       <!-- SLIDESHOW -->
       <div class="slideshow">
-          <img class="imagem-ss" src="./imgs/kesler1.png" alt="slideShow da síndrome de Kessler"></img>
+          <img class="imagem-ss" src="src/assets/imgs/kesler1.png" alt="slideShow da síndrome de Kessler"></img>
           <br>
           <div class="container-botoes">
             <button class="botao" onclick="voltarSlide()">Voltar</button>
@@ -148,23 +148,6 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 7 — FORMULÁRIO DE CONTATO -->
-<section class="secao" id="contato">
-  <h2 class="titulo">Contato</h2>
-  <p class="paragrafo">Tem interesse no projeto ou alguma sugestão? Entre em contato!</p>
-  <div id="form-area">
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" placeholder="Seu nome">
-    <label for="email">E-mail</label>
-    <input type="email" id="email" placeholder="seu@email.com">
-    <label for="mensagem">Mensagem</label>
-    <textarea id="mensagem" placeholder="Escreva aqui..."></textarea>
-    <button onclick="enviarFormulario()">Enviar</button>
-    <p id="form-sucesso"></p>
-  </div>
-</section>
-
-
 <!-- Botões de tema, dentro do header -->
 <div class="tema-selector">
   <button class="tema-btn" onclick="trocarTema('roxo')" style="background:#9040a8"></button>
@@ -178,7 +161,7 @@
         <div class="rodape-flex">
           <div class="rodape-sobre">
             <div class="rodape-logo">
-              <img src="./imgs/FIAP.webp" alt="Logo da FIAP" class="rodape-logo-img">
+              <img src="src/assets/imgs/FIAP.webp" alt="Logo da FIAP" class="rodape-logo-img">
               <span class="rodape-titulo">OrbClear</span>
             </div>
             <p class="rodape-descricao">
@@ -212,5 +195,5 @@
     </footer>
 
   </body>
-  <script src="script.js"></script>
+  <script src="src/js/script.js"></script>
 </html>
